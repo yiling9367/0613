@@ -1,0 +1,401 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+* {
+  font-family: "Playfair Display", "微軟正黑體";
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .box, body .box {
+  width: 600px;
+  height: 400px;
+  border-radius: 15px;
+  position: absolute;
+  left: 700px;
+  top: 200px;
+  background: linear-gradient(150deg, #006d77, #83c5be);
+}
+html .box .box1, body .box .box1 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  position: absolute;
+  left: 5px;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #edf6f9;
+}
+html .box .box1 h4, body .box .box1 h4 {
+  font-size: 28px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  line-height: 35px;
+  opacity: 0.6;
+  color: #e98364;
+}
+html .box .box2, body .box .box2 {
+  width: 150px;
+  height: 150px;
+  border-radius: 0;
+  position: absolute;
+  left: 250px;
+  top: 40px;
+  background-color: #ffddd2;
+}
+html .box .box2 h4, body .box .box2 h4 {
+  font-size: 25px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  line-height: 35px;
+  padding: 10px 0px;
+  margin: 0 10px;
+  color: #e29578;
+  opacity: 0;
+}
+html .box:hover .box1 h4, body .box:hover .box1 h4 {
+  opacity: 0;
+  transition: 0.5s 0.5s;
+}
+html .box:active .box2 h4, body .box:active .box2 h4 {
+  opacity: 1;
+  transition: 0.5s 0.5s;
+}
+html .box:active .box1 h4, body .box:active .box1 h4 {
+  opacity: 1;
+  transition: 0.5s;
+}
+html .person1, body .person1 {
+  width: 400px;
+  height: 300px;
+  border-radius: 200px;
+  position: absolute;
+  left: 0px;
+  top: 200px;
+  background: linear-gradient(#d8e2dc, #ffe5d9, #ffb2c0, #f4acb7);
+  scale: 0.55;
+}
+html .person1 .eyes .Reye, body .person1 .eyes .Reye {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  left: 250px;
+  top: 70px;
+  background-color: #fff;
+  border: solid 1px black;
+}
+html .person1 .eyes .Leye, body .person1 .eyes .Leye {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  left: 150px;
+  top: 70px;
+  background-color: #fff;
+  border: solid 1px black;
+}
+html .person1 .nose, body .person1 .nose {
+  width: 0;
+  height: 0;
+  border: 50px solid;
+  border-color: transparent transparent #fbb034 transparent;
+  position: absolute;
+  left: 200px;
+  top: 80px;
+}
+html .person1 .mouth, body .person1 .mouth {
+  width: 100px;
+  height: 80px;
+  border-radius: 50px;
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  background-color: rgb(230, 70, 70);
+}
+html .person2, body .person2 {
+  width: 400px;
+  height: 300px;
+  border-radius: 200px;
+  position: absolute;
+  left: 320px;
+  top: 10px;
+  background: linear-gradient(#ccd5ae, #e9edc9, #fefae0, #faedcd);
+  scale: 0.65;
+}
+html .person2 .eyes .Reye, body .person2 .eyes .Reye {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  left: 250px;
+  top: 70px;
+  background-color: #fff;
+  border: solid 1px black;
+}
+html .person2 .eyes .Leye, body .person2 .eyes .Leye {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  left: 150px;
+  top: 70px;
+  background-color: #fff;
+  border: solid 1px black;
+}
+html .person2 .nose, body .person2 .nose {
+  width: 0;
+  height: 0;
+  border: 50px solid;
+  border-color: transparent transparent #fbb034 transparent;
+  position: absolute;
+  left: 200px;
+  top: 80px;
+}
+html .person2 .mouth, body .person2 .mouth {
+  width: 100px;
+  height: 80px;
+  border-radius: 50px;
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  background-color: #f00;
+}
+html .person3, body .person3 {
+  width: 400px;
+  height: 300px;
+  border-radius: 200px;
+  position: absolute;
+  left: 720px;
+  top: 600px;
+  background: linear-gradient(#0fa3b1, #b5e2fa, #eddea4, #f7a072);
+  scale: 0.75;
+}
+html .person3 .eyes .Reye, body .person3 .eyes .Reye {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  left: 250px;
+  top: 70px;
+  background-color: #fff;
+  border: solid 1px black;
+}
+html .person3 .eyes .Leye, body .person3 .eyes .Leye {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  left: 150px;
+  top: 70px;
+  background-color: #fff;
+  border: solid 1px black;
+}
+html .person3 .nose, body .person3 .nose {
+  width: 0;
+  height: 0;
+  border: 50px solid;
+  border-color: transparent transparent #fbb034 transparent;
+  position: absolute;
+  left: 200px;
+  top: 80px;
+}
+html .person3 .mouth, body .person3 .mouth {
+  width: 100px;
+  height: 80px;
+  border-radius: 50px;
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  background-color: #f00;
+}
+html .person4, body .person4 {
+  width: 400px;
+  height: 300px;
+  border-radius: 200px;
+  position: absolute;
+  left: 510px;
+  top: 600px;
+  background: linear-gradient(#e0b1cb, #be95c4, #9f86c0, #5e548e);
+  scale: 0.5;
+}
+html .person4 .eyes .Reye, body .person4 .eyes .Reye {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  left: 250px;
+  top: 70px;
+  background-color: #fff;
+  border: solid 1px black;
+}
+html .person4 .eyes .Leye, body .person4 .eyes .Leye {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  left: 150px;
+  top: 70px;
+  background-color: #fff;
+  border: solid 1px black;
+}
+html .person4 .nose, body .person4 .nose {
+  width: 0;
+  height: 0;
+  border: 50px solid;
+  border-color: transparent transparent #fbb034 transparent;
+  position: absolute;
+  left: 200px;
+  top: 80px;
+}
+html .person4 .mouth, body .person4 .mouth {
+  width: 100px;
+  height: 80px;
+  border-radius: 50px;
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  background-color: #f00;
+}
+html .person:hover .nose, body .person:hover .nose {
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  transition: 1s;
+}
+html .person:hover .mouth, body .person:hover .mouth {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  transition: 2s;
+}
+html .person1:hover .nose, body .person1:hover .nose {
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  transition: 1s;
+}
+html .person1:hover .mouth, body .person1:hover .mouth {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  transition: 2s;
+}
+html .person2:hover .nose, body .person2:hover .nose {
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  transition: 1s;
+}
+html .person2:hover .mouth, body .person2:hover .mouth {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  transition: 2s;
+}
+html .person3:hover .nose, body .person3:hover .nose {
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  transition: 1s;
+}
+html .person3:hover .mouth, body .person3:hover .mouth {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  transition: 2s;
+}
+html .person4:hover .nose, body .person4:hover .nose {
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  transition: 1s;
+}
+html .person4:hover .mouth, body .person4:hover .mouth {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  transition: 2s;
+}
+html .person, body .person {
+  width: 400px;
+  height: 300px;
+  border-radius: 200px;
+  position: absolute;
+  left: 1250px;
+  top: 450px;
+  background: linear-gradient(#7700ff, #801bf4, #bf66f7, #c574ea);
+}
+html .person .eyes .Reye, body .person .eyes .Reye {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  left: 250px;
+  top: 70px;
+  background-color: #fff;
+  border: solid 1px black;
+}
+html .person .eyes .Leye, body .person .eyes .Leye {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  position: absolute;
+  left: 150px;
+  top: 70px;
+  background-color: #fff;
+  border: solid 1px black;
+}
+html .person .nose, body .person .nose {
+  width: 0;
+  height: 0;
+  border: 50px solid;
+  border-color: transparent transparent #fbb034 transparent;
+  position: absolute;
+  left: 200px;
+  top: 80px;
+}
+html .person .mouth, body .person .mouth {
+  width: 100px;
+  height: 80px;
+  border-radius: 50px;
+  position: absolute;
+  left: 200px;
+  top: 200px;
+  background-color: #f00;
+}
+html .youtubeDisplay, body .youtubeDisplay {
+  width: 800px;
+  height: 400px;
+  border-radius: 0;
+  position: absolute;
+  left: 900px;
+  top: 400px;
+}
+html .imageDisplay, body .imageDisplay {
+  width: 100px;
+  height: 100px;
+  border-radius: 0;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+html .imageDisplay .img1, body .imageDisplay .img1 {
+  display: cover;
+}
+html .h5pDisplay, body .h5pDisplay {
+  width: 700px;
+  height: 700px;
+  border-radius: 0;
+  position: absolute;
+  left: 1200px;
+  top: 0px;
+}

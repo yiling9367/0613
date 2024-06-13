@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap')
+//*代表所有的html的標籤指令，都要依照這樣格式進行
+
+//指定顏色變數
+$colorBlueRoofLight: #6fc5ff
+$colorBlueRoofDark: #0058ff
+
+$colorGreyLight: #fafaf5
+$colorGreyNormal: #e3e2cf
+$colorGreyDark: #bebdaf
+$colorBackground: #2C2F36
+
+$colorShadowBlue: #7cb1ff
+$colorShadowBlueLight: #8dc9fc
+
+$colorWindowGrey: #534d4d
+
+
+//定義漸層
+
+//屋頂的漸層
+$roofGradient: linear-gradient(150deg, $colorBlueRoofLight, $colorBlueRoofDark)
+//一整條從白天到晚上的背景顏色
+$sceneGradient: linear-gradient(#1D2B49,#1A45A0,#91cdff,#fff)
+
+$c1: #9e2a2b
+$box_bgc: #cddafd
+$box1_bgc: #fde2e4
+$box2_bgc: #fde2e4
+
+
+//設定元件的寬與高
+@mixin size($w,$h:$w,$bdrs:0)
+    width: $w
+    height: $h
+    border-radius: $bdrs
+
+//設定下層的物件置中
+@mixin flex($j:center,$a:center)
+    display: flex
+    justify-content: $j //主軸線:左右
+    align-items: $a  //副軸線:上下
+
+//設定物件的位置，靠左多少px，靠上多少px
+@mixin abpos($l:initial,$t:initial)
+    position: absolute
+    left: $l
+    top: $t
+//畫圓弧的方框，可以直接畫圓
+@mixin bdrsRect($w,$h:$w)
+    width: $w
+    height: $h
+    border-radius: $h/2
+@mixin person($x,$y,$z)        
+        +size(400px,300px,200px)
+        +abpos($x,$y)
+        
+        //background-color: #ff0   //#ffff00
+        background: $sceneGradient
+        //border: solid 1px black
+        scale: $z
+        .eyes
+            .Reye
+                +bdrsRect(40px)
+                +abpos(250px,70px) 
+                background-color: #fff 
+                border: solid 1px black              
+            .Leye
+                +bdrsRect(40px)
+                +abpos(150px,70px)
+                background-color: #fff 
+                border: solid 1px black   
+        .nose
+            width: 0
+            height: 0
+            border: 50px solid
+            border-color: transparent transparent #fbb034 transparent 
+            +abpos(200px,80px)
+        .mouth
+            +size(100px,80px,50px)
+            +abpos(200px,200px)
+            background-color: #f00
+@mixin  person_hover($x,$y)
+        .nose 
+            +abpos($x,$y)
+            transition:1s
+
+        .mouth
+            +size(100px,40px,20px)
+            transition:2s
+*
+    font-family: "Playfair Display","微軟正黑體"
+    //border: solid 2px black  //加上框線，實心線，2px線條粗細，黑
+html,body
+    +size(100%)
+    position: relative
+    +flex()  //讓下一層物件置中
+    .box
+        +size(600px,400px,15px)   //寬高，四個角的圓弧
+        +abpos(700px,200px)     //座位位置     
+        //background-color: $box_bgc   //背景顏色        
+        background: $roofGradient
+        .box1
+            +bdrsRect(200px)  //畫圓，直徑為200px
+            +abpos(5px,30px)
+            +flex()
+            background-color: $box1_bgc
+            h4
+                font-size: 28px   //文字大小
+                letter-spacing: 1px  //字與字間的間距
+                font-weight: 800    //字的粗細大小
+                line-height: 35px   //一行的高度
+                opacity: 0.6
+                color: #003f88
+        .box2
+            +size(150px)
+            +abpos(250px,40px)
+            background-color: $box2_bgc
+            h4  
+                font-size: 25px
+                letter-spacing: 3px
+                font-weight: 900
+                line-height: 35px
+                padding: 10px 0px
+                margin: 0 10px
+                color: $c1
+                opacity: 0   
+    
+    .box:hover   //在box物件範圍內滑入滑鼠游標
+        .box1
+            h4
+             opacity: 0
+             transition: 0.5s 0.5s
+    .box:active  //在.box物件按下滑鼠
+        .box2
+            h4
+                opacity: 1
+                transition: 0.5s 0.5s  //延遲1sec後開始動作，花2sec完成動作結束
+        .box1
+            h4
+                opacity: 1
+                transition: 0.5s
+    .person1
+        +person(0px,200px,0.55)
+    .person2
+        +person(320px,10px,0.65)
+    .person3
+        +person(700px,600px,0.75)
+    .person4
+        +person(1200px,600px,0.5)    
+    .person:hover
+        +person_hover(200px,50px)
+    .person1:hover
+        +person_hover(200px,50px)
+    .person2:hover
+        +person_hover(200px,50px) 
+    .person3:hover
+        +person_hover(200px,50px)
+    .person4:hover
+        +person_hover(200px,50px)               
+    .person        
+        +size(400px,300px,200px)
+        +abpos(250px,450px)
+        //background-color: #ff0   //#ffff00
+        background: $sceneGradient
+        //border: solid 1px black
+        .eyes
+            .Reye
+                +bdrsRect(40px)
+                +abpos(250px,70px) 
+                background-color: #fff 
+                border: solid 1px black              
+            .Leye
+                +bdrsRect(40px)
+                +abpos(150px,70px)
+                background-color: #fff 
+                border: solid 1px black   
+        .nose
+            width: 0
+            height: 0
+            border: 50px solid
+            border-color: transparent transparent #fbb034 transparent 
+            +abpos(200px,80px)
+        .mouth
+            +size(100px,80px,50px)
+            +abpos(200px,200px)
+            background-color: #f00
+    
+    .youtubeDisplay
+        +size(800px,400px)  //要播放的寬高
+        +abpos(900px,400px)  //位置
+    .imageDisplay
+        +size(100px,100px)  //要播放的寬高
+        +abpos(0px,0px)  //位置
+        .img1
+            display: cover
+    .h5pDisplay
+        +size(700px,700px)  //要播放的寬高
+        +abpos(1200px,0px)  //位置 
+
+    
+    
+        
+
+
